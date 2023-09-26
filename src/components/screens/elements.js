@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import right_arrow from "../../assets/right_arrow.png";
 import { useTable } from "react-table";
 import search from "../../assets/search.png";
@@ -10,33 +10,75 @@ const Elements = () => {
   // Define your table data and columns
   const data = [
     {
-      firstName: "John",
-      lastName: "Doe",
-      age: 30,
+      name: "John",
+      elementCategory: "Deduction",
+      elementClassification: "Pre-Tax Deduction",
+      status: "Active",
+      createdAt: "2023-09-20T18:32:47.716Z",
+      modifiedBy: "Timothy",
+      action: "click",
     },
     {
-      firstName: "Jane",
-      lastName: "Smith",
-      age: 25,
+      name: "John",
+      elementCategory: "Deduction",
+      elementClassification: "Pre-Tax Deduction",
+      status: "Active",
+      createdAt: "2023-09-20T18:32:47.716Z",
+      modifiedBy: "Timothy",
+      action: "click",
     },
+    {
+      name: "John",
+      elementCategory: "Deduction",
+      elementClassification: "Pre-Tax Deduction",
+      status: "Active",
+      createdAt: "2023-09-20T18:32:47.716Z",
+      modifiedBy: "Timothy",
+      action: "click",
+    },
+    // {
+    //   createdAt: "2023-09-20T18:32:47.716Z",
+    //   name: "Element Category",
+    //   description: "Element Category",
+    //   type: "System Default",
+    //   id: "1"
+    //   },
     // Add more data rows as needed
   ];
 
-  const columns = [
-    {
-      Header: "First Name",
-      accessor: "firstName", // corresponds to the data field
-    },
-    {
-      Header: "Last Name",
-      accessor: "lastName",
-    },
-    {
-      Header: "Age",
-      accessor: "age",
-    },
-    // Add more columns as needed
-  ];
+  const columns = React.useMemo(
+    () => [
+      {
+        Header: "Name",
+        accessor: "name", // corresponds to the data field
+      },
+      {
+        Header: "Element Category",
+        accessor: "elementCategory",
+      },
+      {
+        Header: "Element Classification",
+        accessor: "elementClassification",
+      },
+      {
+        Header: "Status",
+        accessor: "status",
+      },
+      {
+        Header: "Date & Time Modified",
+        accessor: "createdAt",
+      },
+      {
+        Header: "Modified By",
+        accessor: "modifiedBy",
+      },
+      {
+        Header: "Action",
+        accessor: "action",
+      },
+    ],
+    []
+  );
 
   // Use the useTable hook to create the table instance
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =

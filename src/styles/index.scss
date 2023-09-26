@@ -263,6 +263,46 @@
   color: #fff;
   text-align: center;
 }
+table {
+  width: 95%;
+  height: 400px;
+  border-collapse: collapse;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+th,
+td {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+th {
+  text-align: left;
+}
+thead th {
+  background-color: #2d416f;
+  color: #fff;
+}
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+tbody td {
+  position: relative;
+  color: #2d416f;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+tbody td:hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: -1;
+}
 
 // .flex {
 //   display: flex;
