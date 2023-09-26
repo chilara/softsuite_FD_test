@@ -19,7 +19,13 @@ const Navbar = () => {
           </div>
           <img src={downArrow} alt="downArrow" className="arrow" />
         </div>
-        <Input placeholder="Searching for something..." />
+        <Input
+          containerStyle="containStyle1"
+          inputStyle="inputStyle1"
+          buttonStyle="buttonStyle1"
+          placeholder="Searching for something..."
+          imgStyle="img_input"
+        />
         <div className="avi_section">
           <img src={notifi} alt="notification" className="img_notifi" />
           <div className="avi_section_child">

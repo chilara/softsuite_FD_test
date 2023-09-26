@@ -1,12 +1,18 @@
 import React from "react";
 import search from "../../assets/search.png";
 
-const Input = ({ placeholder }) => {
+const Input = ({
+  placeholder,
+  containerStyle,
+  inputStyle,
+  buttonStyle,
+  imgStyle,
+}) => {
   return (
-    <div className="input">
-      <input className="searching" placeholder={placeholder} />
-      <button className="btn">
-        <img src={search} alt="search" className="img_input" />
+    <div className={containerStyle}>
+      <input className={inputStyle} placeholder={placeholder} />
+      <button className={buttonStyle}>
+        <img src={search} alt="search" className={imgStyle} />
       </button>
     </div>
   );

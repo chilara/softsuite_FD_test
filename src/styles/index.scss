@@ -59,7 +59,7 @@
   width: 14px;
   height: 14px;
 }
-.input {
+.containStyle1 {
   width: 35%;
   border: 1px solid #dfdfdf;
   border-radius: 6px;
@@ -67,13 +67,13 @@
   justify-content: center;
   position: relative;
 }
-.searching {
+.inputStyle1 {
   border: none;
   width: 80%;
   outline-width: 0;
   padding: 4px;
 }
-.btn {
+.buttonStyle1 {
   position: absolute;
   right: 0;
   top: 0;
@@ -197,33 +197,33 @@
   background: #f4f6f8;
   margin-left: 2.5%;
 }
-.input1 {
+.containStyle2 {
   width: 35%;
-  height: 40px;
-  border-radius: 4.8px;
-  border: 0.8px solid #cde1e3;
-  background: #fff;
+  border: 1px solid #dfdfdf;
+  border-radius: 6px;
   display: flex;
   justify-content: center;
   position: relative;
 }
-.searching1 {
+.inputStyle2 {
   border: none;
-  width: 99%;
+  width: 100%;
   outline-width: 0;
-  padding: 4px;
+  padding: 8px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
 }
-.btn1 {
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
+.buttonStyle2 {
   background-color: $secondary-color1;
   border: none;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   width: 50px;
   padding: 1rem;
+}
+.img_input2 {
+  width: 16px;
+  height: 16px;
 }
 .img_input1 {
   width: 16px;
@@ -238,8 +238,7 @@
   border: none;
   border-radius: 6px;
   background-color: #2d416f;
-  width: 40px;
-  height: 40px;
+  width: 50px;
   padding: 1rem;
   display: flex;
   justify-content: center;
@@ -251,7 +250,7 @@
 }
 .green_btn {
   display: flex;
-  height: 40px;
+  height: 50px;
   width: 20%;
   padding: 16px;
   align-items: center;

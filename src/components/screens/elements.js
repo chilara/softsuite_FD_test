@@ -4,6 +4,7 @@ import { useTable } from "react-table";
 import search from "../../assets/search.png";
 import Filter from "../../assets/Filter.png";
 import plus from "../../assets/plus.png";
+import Input from "./input";
 // import Input from "./input";
 
 const Elements = () => {
@@ -97,12 +98,13 @@ const Elements = () => {
         <p className="element_heading">Elements</p>
         <div className="input_section">
           <div className="input_btn">
-            <div className="input1">
-              <input className="searching1" placeholder="Search for element" />
-              <button className="btn1">
-                <img src={search} alt="search" className="img_input1" />
-              </button>
-            </div>
+            <Input
+              containerStyle="containStyle2"
+              inputStyle="inputStyle2"
+              buttonStyle="buttonStyle2"
+              placeholder="Search for Element"
+              imgStyle="img_input2"
+            />
             <button className="blue_icon">
               <img src={Filter} alt="filter" className="img_filter" />
             </button>
