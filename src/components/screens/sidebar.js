@@ -21,9 +21,9 @@ import settingGrey from "../../assets/settingGrey.png";
 import Profile from "../../assets/Profile.png";
 import Logout from "../../assets/Logout.png";
 
-const Sidebar = () => {
+const Sidebar = ({ sidebar }) => {
   return (
-    <div className="sidebar">
+    <div className={sidebar}>
       {/* switch module */}
       <Accordion allowToggle margin={"3% 5%"} width={"90%"}>
         <AccordionItem borderTop={"none"} borderBottom={"none"}>

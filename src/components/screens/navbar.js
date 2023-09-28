@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "./../../assets/logo.png";
 import homie from "../../assets/homie.png";
 import downArrow from "../../assets/downArrow.png";
 import notifi from "../../assets/notifi.png";
 import avi from "../../assets/avi.png";
 import Input from "./input";
+import Sidebar from "./sidebar";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+  const toggler = () => {
+    setOpen(!open);
+  };
+
+  const closeNavbar = () => {
+    setOpen(false);
+  };
+
   return (
     <div className="navbar">
       <img src={logo} alt="logo" className="logo" />
@@ -35,7 +45,19 @@ const Navbar = () => {
               <p className="text-change">Payroll Manager</p>
             </div>
           </div>
+          <div className="hamburger" onClick={toggler}>
+            <div className="lines"></div>
+            <div className="lines"></div>
+            <div className="lines"></div>
+          </div>
         </div>
+      </div>
+      <div>
+        {open && (
+          <div className="menuMobile">
+            <Sidebar onClick={closeNavbar} sidebar="sidebar1" />
+          </div>
+        )}
       </div>
     </div>
   );

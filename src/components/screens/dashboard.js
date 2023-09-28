@@ -11,7 +11,7 @@ const Dashboard = () => {
     <div>
       <Navbar />
       <div className="main_section">
-        <Sidebar />
+        <Sidebar sidebar="sidebar2" />
         <Elements onOpen={() => setIsOpen(true)} />
       </div>
 
