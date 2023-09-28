@@ -1,89 +1,93 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+// import { useTable, useSortBy, usePagination } from "react-table";
 import right_arrow from "../../assets/right_arrow.png";
-import { useTable } from "react-table";
-import search from "../../assets/search.png";
 import Filter from "../../assets/Filter.png";
 import plus from "../../assets/plus.png";
+// import Sort from "../../assets/Sort.png";
 import Input from "./input";
-// import Input from "./input";
+// import { BiSortAlt2 } from "react-icons/bi";
 
-const Elements = () => {
+const Elements = ({ onOpen }) => {
   // Define your table data and columns
-  const data = [
-    {
-      name: "John",
-      elementCategory: "Deduction",
-      elementClassification: "Pre-Tax Deduction",
-      status: "Active",
-      createdAt: "2023-09-20T18:32:47.716Z",
-      modifiedBy: "Timothy",
-      action: "click",
-    },
-    {
-      name: "John",
-      elementCategory: "Deduction",
-      elementClassification: "Pre-Tax Deduction",
-      status: "Active",
-      createdAt: "2023-09-20T18:32:47.716Z",
-      modifiedBy: "Timothy",
-      action: "click",
-    },
-    {
-      name: "John",
-      elementCategory: "Deduction",
-      elementClassification: "Pre-Tax Deduction",
-      status: "Active",
-      createdAt: "2023-09-20T18:32:47.716Z",
-      modifiedBy: "Timothy",
-      action: "click",
-    },
-    // {
-    //   createdAt: "2023-09-20T18:32:47.716Z",
-    //   name: "Element Category",
-    //   description: "Element Category",
-    //   type: "System Default",
-    //   id: "1"
-    //   },
-    // Add more data rows as needed
-  ];
+  // const data = [
+  //   {
+  //     name: "John",
+  //     elementCategory: "Deduction",
+  //     elementClassification: "Pre-Tax Deduction",
+  //     status: "Active",
+  //     createdAt: "2023-09-20T18:32:47.716Z",
+  //     modifiedBy: "Timothy",
+  //     action: "click",
+  //   },
+  //   {
+  //     name: "John",
+  //     elementCategory: "Deduction",
+  //     elementClassification: "Pre-Tax Deduction",
+  //     status: "Active",
+  //     createdAt: "2023-09-20T18:32:47.716Z",
+  //     modifiedBy: "Timothy",
+  //     action: "click",
+  //   },
+  //   {
+  //     name: "John",
+  //     elementCategory: "Deduction",
+  //     elementClassification: "Pre-Tax Deduction",
+  //     status: "Active",
+  //     createdAt: "2023-09-20T18:32:47.716Z",
+  //     modifiedBy: "Timothy",
+  //     action: "click",
+  //   },
+  // ];
 
-  const columns = React.useMemo(
-    () => [
-      {
-        Header: "Name",
-        accessor: "name", // corresponds to the data field
-      },
-      {
-        Header: "Element Category",
-        accessor: "elementCategory",
-      },
-      {
-        Header: "Element Classification",
-        accessor: "elementClassification",
-      },
-      {
-        Header: "Status",
-        accessor: "status",
-      },
-      {
-        Header: "Date & Time Modified",
-        accessor: "createdAt",
-      },
-      {
-        Header: "Modified By",
-        accessor: "modifiedBy",
-      },
-      {
-        Header: "Action",
-        accessor: "action",
-      },
-    ],
-    []
-  );
+  // const columns = React.useMemo(
+  //   () => [
+  //     {
+  //       Header: "Name",
+  //       accessor: "name", // corresponds to the data field
+  //     },
+  //     {
+  //       Header: "Element Category",
+  //       accessor: "elementCategory",
+  //     },
+  //     {
+  //       Header: "Element Classification",
+  //       accessor: "elementClassification",
+  //     },
+  //     {
+  //       Header: "Status",
+  //       accessor: "status",
+  //     },
+  //     {
+  //       Header: "Date & Time Modified",
+  //       accessor: "createdAt",
+  //     },
+  //     {
+  //       Header: "Modified By",
+  //       accessor: "modifiedBy",
+  //     },
+  //     {
+  //       Header: "Action",
+  //       accessor: "action",
+  //     },
+  //   ],
+  //   []
+  // );
 
   // Use the useTable hook to create the table instance
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable({ columns, data });
+  // const {
+  //   getTableProps,
+  //   getTableBodyProps,
+  //   headerGroups,
+  //   rows,
+  //   prepareRow,
+  //   gotoPage,
+  //   previousPage,
+  //   nextPage,
+  //   canNextPage,
+  //   canPreviousPage,
+  //   pageCount,
+  //   pageIndex,
+  // } = useTable({ columns, data }, useSortBy, usePagination);
 
   return (
     <div className="elements">
@@ -109,18 +113,29 @@ const Elements = () => {
               <img src={Filter} alt="filter" className="img_filter" />
             </button>
           </div>
-          <button className="green_btn">
+          <button className="green_btn" onClick={onOpen}>
             <p className="CE">Create Element</p>
             <img src={plus} alt="plus" className="img_input1" />
           </button>
         </div>
-        <table {...getTableProps()}>
+        {/* <table {...getTableProps()}>
           <thead>
             {headerGroups.map((headerGroup) => (
               <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => (
-                  <th {...column.getHeaderProps()}>
+                  <th {...column.getHeaderProps(column.getToggleHiddenProps)}>
                     {column.render("Header")}
+                    <span>
+                      {column.isVisible ? (
+                        column.isVisible ? (
+                          <BiSortAlt2 />
+                        ) : (
+                          <BiSortAlt2 />
+                        )
+                      ) : (
+                        ""
+                      )}
+                    </span>
                   </th>
                 ))}
               </tr>
@@ -140,7 +155,31 @@ const Elements = () => {
               );
             })}
           </tbody>
-        </table>
+        </table> */}
+
+        {/* <div>
+          <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+            {"<<"}
+          </button>
+          <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+            {"<"}
+          </button>
+          <span>
+            Page{" "}
+            <strong>
+              {pageIndex + 1} of {pageCount}
+            </strong>{" "}
+          </span>
+          <button onClick={() => nextPage()} disabled={!canNextPage}>
+            {">"}
+          </button>
+          <button
+            onClick={() => gotoPage(pageCount - 1)}
+            disabled={!canNextPage}
+          >
+            {">>"}
+          </button>
+        </div> */}
       </div>
     </div>
   );
